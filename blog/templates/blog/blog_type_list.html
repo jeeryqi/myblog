@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ blogtype.type_name }} - {{ block.super }}{% endblock %}
+
+{% block body %}
+    {% for blog in blog_type_list %}
+        <p><a href="{% url 'blog:blogdetail' blog.pk %}">{{ blog.title }}</a>
+            {#            <a href="{% url 'blog:blogtypelist' blog.blog_type.id %}">{{ blog.blog_type }}</a>#}
+            {{ blog.blog_type }}
+        </p>
+        <p>{{ blog.author }}({{ blog.create_time }})</p>
+        {{ blog.content | truncatechars:30 }}
+    {% endfor %}
+{% endblock %}

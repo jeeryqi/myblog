@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ blog.title }} - {{ block.super }}{% endblock %}
+
+{% block body %}
+    <p>{{ blog.title }} - {{ blog.author }} ({{ blog.create_time }})</p>
+    <p>{{ blog.content }}</p>
+{% endblock %}

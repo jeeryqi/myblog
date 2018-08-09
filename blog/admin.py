@@ -16,7 +16,7 @@ class BlogTypeAdmin(admin.ModelAdmin):
 class BlogAdmin(admin.ModelAdmin):
     fieldsets = (
         # (None, {'fields': ['question_text']}),
-        (None, {'fields': ('title', 'author',)}),
+        (None, {'fields': ('type_name', 'title', 'author',)}),
         ('内容', {'fields': ('content',)}),
         # ('时间', {'fields': ('create_time', 'last_update_time',)}),
     )
